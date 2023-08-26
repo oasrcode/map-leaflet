@@ -16,6 +16,8 @@ import { TableModule } from 'primeng/table';
 import {DialogModule} from 'primeng/dialog'
 import { GrafcanApiService } from './Servicios/grafcan-api.service';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [		
     AppComponent,
@@ -35,7 +37,9 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     InputTextModule,
     TableModule,
     DialogModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [GrafcanApiService],
   bootstrap: [AppComponent]

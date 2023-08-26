@@ -1,9 +1,23 @@
 <div class="p-grid">
   <div class="p-col-12">
     <p-autoComplete
+      [forceSelection]="true"
+      [(ngModel)]="calleSeleccionada"
       [suggestions]="suggestions"
-      (completeMethod)="search($event)"
+      (completeMethod)="buscar($event)"
+      (onSelect)="seleccionarCalle($event)"
+      field="nombre"
     >
+      <ng-template let-calle pTemplate="item">
+        <div class="ui-helper-clearfix">
+          <div style="font-size: 18px; float: left; margin: 10px 10px 0 0">
+            {{ calle.nombre }}
+          </div>
+          <div style="font-size: 10px; float: left; margin: 10px 10px 0 0">
+            {{ calle.localizacion }}
+          </div>
+        </div>
+      </ng-template>
     </p-autoComplete>
     <p-button (click)="showDialog()" icon="pi pi-map"></p-button>
   </div>
@@ -12,8 +26,8 @@
 <p-dialog
   header="Header"
   [(visible)]="visible"
-  [style]="{ width: '50vw', height: '50vw' }"
+  [style]="{ width: '50vw' }"
   [maximizable]="true"
 >
-  <app-map></app-map>
+  <app-map *ngIf="visible" [coordenadas]="coordenadas" [nombre]="nombre"></app-map>
 </p-dialog>

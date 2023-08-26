@@ -1,0 +1,19 @@
+<div class="p-grid">
+  <div class="p-col-12">
+    <p-autoComplete
+      [suggestions]="suggestions"
+      (completeMethod)="search($event)"
+    >
+    </p-autoComplete>
+    <p-button (click)="showDialog()" icon="pi pi-map"></p-button>
+  </div>
+</div>
+
+<p-dialog
+  header="Header"
+  [(visible)]="visible"
+  [style]="{ width: '50vw', height: '50vw' }"
+  [maximizable]="true"
+>
+  <app-map></app-map>
+</p-dialog>

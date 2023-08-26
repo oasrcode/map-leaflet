@@ -1,27 +1,37 @@
-# Client
+# Nombre del Proyecto
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+Descripción breve del proyecto.
 
-## Development server
+## Instalación
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Clona este repositorio: `git clone https://github.com/tuusuario/turepositorio.git`.
+2. Ve al directorio del proyecto: `cd client`.
+3. Instala las dependencias: `npm install`.
 
-## Code scaffolding
+## Uso
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Inicia el servidor de desarrollo: `npm start`.
+- Compila la aplicación: `npm run build`.
+- Observa los cambios y compila en modo desarrollo: `npm run watch`.
+- Ejecuta las pruebas: `npm test`.
 
-## Build
+## Dependencias
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [@angular/animations](https://angular.io/guide/animations): ^16.2.0
+- [@angular/common](https://angular.io/guide/common): ^16.2.0
+- [@angular/compiler](https://angular.io/guide/compiler): ^16.2.0
+- ... (otras dependencias)
+- [leaflet](https://leafletjs.com/): ^1.5.1
+- [primeicons](https://www.primefaces.org/primeicons/): ^6.0.1
+- [primeng](https://primefaces.org/primeng/showcase/#/): ^16.2.0
 
-## Running unit tests
+## Dependencias de Desarrollo
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- [@angular-devkit/build-angular](https://angular.io/cli/build): ^16.2.0
+- [@angular/cli](https://angular.io/cli): ~16.2.0
+- [@angular/compiler-cli](https://angular.io/guide/angular-cli): ^16.2.0
+- ... (otras dependencias de desarrollo)
 
-## Running end-to-end tests
+## Licencia
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Este proyecto está bajo la Licencia XYZ. Consulta el archivo [LICENSE](LICENSE) para más detalles.

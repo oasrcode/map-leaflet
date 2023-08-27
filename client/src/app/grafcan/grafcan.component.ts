@@ -50,6 +50,7 @@ export class GrafcanComponent {
     );
   }
 
+  datosMarca:any
   seleccionarCalle(event: Calle) {
     this.calleSeleccionada = this.response.data.find(
       (calle) => (calle.id = event.id)
@@ -61,5 +62,19 @@ export class GrafcanComponent {
     ];
 
     this.nombre =  this.calleSeleccionada.nombre
+
+    if(this.calleSeleccionada!=null){
+      this.getMarca()
+    }
   }
+
+  getMarca(){
+    this.api.getMarca(this.calleSeleccionada.id).subscribe((res)=>{
+      console.log(res)
+      let coordinates = 2
+    },(err)=>{
+      console.log(err)
+    })
+  }
+
 }

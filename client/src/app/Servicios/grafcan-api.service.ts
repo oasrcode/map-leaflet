@@ -34,13 +34,24 @@ export interface Calle {
 export class GrafcanApiService {
   constructor(private httpClient: HttpClient) {}
 
-  url = 'https://visor.grafcan.es/busquedas/toponimo/1/50/?&texto=';
+  urlCalle = 'https://visor.grafcan.es/busquedas/toponimo/1/50/?&texto=';
+
+  urlMarca = 'https://visor.grafcan.es//busquedas/toponimiakml/1/50/texto/1/';
 
   getCalle(nombre: string) {
-    return this.httpClient.get(this.url + nombre, {
+    return this.httpClient.get(this.urlCalle + nombre, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }),
+    });
+  }
+
+  getMarca(id: number) {
+    return this.httpClient.get(this.urlMarca + id + '/', {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/xml',
+      }),
+      responseType: 'text'
     });
   }
 }

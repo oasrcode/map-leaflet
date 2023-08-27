@@ -36,7 +36,7 @@ export class GrafcanApiService {
 
   urlCalle = 'https://visor.grafcan.es/busquedas/toponimo/1/50/?&texto=';
 
-  urlMarca = 'https://visor.grafcan.es//busquedas/toponimiakml/1/50/texto/1/';
+  urlMarca = 'https://visor.grafcan.es/busquedas/toponimiakml/1/10/idecanarias/1/';
 
   getCalle(nombre: string) {
     return this.httpClient.get(this.urlCalle + nombre, {

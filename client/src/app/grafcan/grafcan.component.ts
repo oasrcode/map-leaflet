@@ -22,10 +22,12 @@ export class GrafcanComponent {
 
   response!: GrafcanApiResponse;
 
-  calleSeleccionada: any ;
+  calleSeleccionada: any;
 
   coordenadas: [number, number] | null = null;
   nombre: string | null = null;
+
+  kml: any;
 
   showDialog() {
     if (this.calleSeleccionada) {
@@ -50,7 +52,7 @@ export class GrafcanComponent {
     );
   }
 
-  datosMarca:any
+  datosMarca: any;
   seleccionarCalle(event: Calle) {
     this.calleSeleccionada = this.response.data.find(
       (calle) => (calle.id = event.id)
@@ -61,20 +63,25 @@ export class GrafcanComponent {
       this.calleSeleccionada.longitud,
     ];
 
-    this.nombre =  this.calleSeleccionada.nombre
+    this.nombre = this.calleSeleccionada.nombre;
 
-    if(this.calleSeleccionada!=null){
-      this.getMarca()
+    if (this.calleSeleccionada != null) {
+      console.log(this.calleSeleccionada);
+      if (this.calleSeleccionada.clasificacion == 'GRF Callejero - Viales') {
+        this.getMarca();
+      }
     }
   }
 
-  getMarca(){
-    this.api.getMarca(this.calleSeleccionada.id).subscribe((res)=>{
-      console.log(res)
-      let coordinates = 2
-    },(err)=>{
-      console.log(err)
-    })
+  getMarca() {
+    this.api.getMarca(this.calleSeleccionada.id).subscribe(
+      (res) => {
+        const parse = new DOMParser();
+        this.kml = parse.parseFromString(res, 'text/xml');
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
-
 }

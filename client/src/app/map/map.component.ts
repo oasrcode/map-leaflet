@@ -3,6 +3,7 @@ import {
   AfterViewChecked,
   Component,
   Input,
+  OnDestroy,
   OnInit,
 } from '@angular/core';
 import * as L from 'leaflet';
@@ -23,6 +24,7 @@ export class MapComponent implements AfterViewChecked {
 
   ngOnInit() {
     setTimeout(() => {
+      console.log(this.map);
       this.initMap();
     }, 100);
   }
@@ -43,13 +45,15 @@ export class MapComponent implements AfterViewChecked {
       marca.bindPopup('Calle : ' + this.nombre);
 
       if (this.kml != null) {
-        const track = new L.KML(this.kml);
-        this.map.addLayer(track);
+        this.track = new L.KML(this.kml);
+
+        this.map.addLayer(this.track);
 
         // Adjust map to show the kml
-        const bounds = track.getBounds();
+        const bounds = this.track.getBounds();
         this.map.fitBounds(bounds);
       }
     }
   }
+  track: any;
 }

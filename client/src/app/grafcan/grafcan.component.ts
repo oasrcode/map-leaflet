@@ -67,7 +67,8 @@ export class GrafcanComponent {
 
     if (this.calleSeleccionada != null) {
       console.log(this.calleSeleccionada);
-      if (this.calleSeleccionada.clasificacion == 'GRF Callejero - Viales') {
+      this.kml = null;
+      if (this.calleSeleccionada.clasificacion != 'GRF Callejero - Portales') {
         this.getMarca();
       }
     }

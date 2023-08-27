@@ -19,7 +19,7 @@
         </div>
       </ng-template>
     </p-autoComplete>
-    <p-button (click)="showDialog()" icon="pi pi-map"></p-button>
+    <p-button [disabled]="!this.coordenadas" (click)="showDialog()" icon="pi pi-map"></p-button>
   </div>
 </div>
 

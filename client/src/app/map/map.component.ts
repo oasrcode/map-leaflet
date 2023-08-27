@@ -28,7 +28,8 @@ export class MapComponent implements AfterViewChecked {
       this.initMap();
     }, 100);
   }
-
+  layerSatelite =
+    'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
   private initMap() {
     if (this.coordenadas != null && this.nombre != null) {
       this.map = new Map('leafletMap').setView(this.coordenadas, 20);
